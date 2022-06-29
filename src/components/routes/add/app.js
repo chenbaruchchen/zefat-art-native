@@ -23,19 +23,23 @@ export default function App(){
 
     },[])
   
-    useEffect(()=>{
-console.log(shelonim?.SheetNames)
-    },[shelonim])
+//     useEffect(()=>{
+// console.log(shelonim?.SheetNames)
+//     },[shelonim])
     const items=['1','b','3']
     if (chosen===null) {
-        if (shelonim===null) {}
         
-         return<List onChosen={setChosen} items={items}/>
+        if (shelonim!==null) {
+         return<List onChosen={setChosen} items={shelonim.SheetNames}/>
+        }
      } 
     
    if (shelonim!==null) {
-    console.log(shelonim.sheets)
-     return <Form shelon={shelonim.sheets[chosen]}/>
+    //  console.log( shelonim.Sheets['סקר חיילים'])
+    //  console.log( chosen)
+
+    // console.log( shelonim.Sheets)
+     return <Form shelon={shelonim.Sheets[chosen]} />
    
    } 
     return <Text>dsdsdsd</Text>
